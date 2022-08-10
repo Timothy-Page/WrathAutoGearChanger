@@ -1,0 +1,19 @@
+## Interface: 30400
+## Title: WrathAutoGearChanger
+## Author: Tranzalore
+## Version: 1.1.1
+
+Lib\Nodes.lua
+
+main.lua
+
+# This addon requires Equipment set feature to be enabled and saved sets ("Mining", "Herbalism", "Fishing", "Skinning", "Mount" and sets for your normal gear) to work correctly.
+# This addon also requires your normal gear to be in Equipment sets so it knows what to equip when you are done with the Mining/Herbalism/Fishing... set
+# It will equip and unequip the sets based on the item you are moused over (will not equip sets if you have enough skill without them).
+
+#Known Issues
+#After you login you will have to equip your "normal" gear set which the addon will then save as your "currentBaseSet" to know what to requip when you are done with your "Special" set.
+
+#Future Plans
+#Update addon to save your "currentBaseSet" so you do not have to manaualy equip a set every time you login
+#Add logic to not try and equip "Mount" set if you have "Crusader Aura","DK Talent"....
