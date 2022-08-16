@@ -31,7 +31,7 @@ local inCombat = InCombatLockdown()
 
 local currentSet = "None"
 local currentWantedSet = "None"
-local currentBaseSet = "None"
+--local currentBaseSet = "None"
 
 local flightFormBuffs = {
     ["Swift Flight Form"] = true,
@@ -317,7 +317,10 @@ local function GetSetID(setName)
 end
 
 local function WAGCEquipSet(setName)
-    if not (setName == "None") then
+    if setName ~= "None" and setName ~= nil then
+        if inDebugMode then
+            print("Looking for setname: " .. tostring(setName))
+        end
         setID = GetSetID(setName)
         if setID ~= nil then
             setWasEquipped = C_EquipmentSet.UseEquipmentSet(setID)
@@ -463,8 +466,10 @@ local function SetChangedHandler(self, event, result, setID, ...)
         end
 
         if currentSet ~= currentWantedSet and currentSet ~= currentBaseSet then
-            --print("Changing Base set from " .. tostring(currentBaseSet) .. " to " .. currentSet)
-            currentBaseSet = currentSet
+            if inDebugMode then
+              print("Changing Base set from " .. tostring(currentBaseSet) .. " to " .. currentSet)
+            end
+              currentBaseSet = currentSet
         end
     end
 end

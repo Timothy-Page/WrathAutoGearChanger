@@ -1,7 +1,8 @@
 ## Interface: 30400
 ## Title: WrathAutoGearChanger
 ## Author: Tranzalore
-## Version: 1.1.1
+## Version: 1.1.2
+## SavedVariablesPerCharacter: currentBaseSet
 
 Lib\Nodes.lua
 
