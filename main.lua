@@ -38,6 +38,8 @@ local flightFormBuffs = {
     ["Flight Form"] = true
 }
 
+local alreadyWarnedSetMissing = {}
+
 --Create delay function
 local waitTable = {}
 local waitFrame = nil
@@ -325,7 +327,10 @@ local function WAGCEquipSet(setName)
         if setID ~= nil then
             setWasEquipped = C_EquipmentSet.UseEquipmentSet(setID)
         else
-            print("Could not Find Set: " .. setName)
+            if alreadyWarnedSetMissing[setName] == nil then
+                alreadyWarnedSetMissing[setName] = true
+                print("Could not Find Set: " .. setName)
+            end
         end
     end
 end
